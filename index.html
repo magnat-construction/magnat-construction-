@@ -1,75 +1,247 @@
 <!DOCTYPE html>
+
 <html lang="de">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>MAGNAT CONSTRUCTION</title>
+
 <style>
+
 *{box-sizing:border-box}
+
 body{margin:0;background:#111;color:white;font-family:Arial,sans-serif}
-header{padding:25px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #b99755}
+
+header{padding:25px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #b99755;flex-wrap:wrap;gap:15px}
+
 .logo{color:#d5ad61;font-size:25px;font-weight:bold;letter-spacing:4px}
+
 .logo span{display:block;color:white;font-size:11px;letter-spacing:6px;text-align:center;margin-top:5px}
-nav a{color:white;text-decoration:none;margin-left:20px;font-size:13px}
+
+nav{display:flex;align-items:center;flex-wrap:wrap;gap:16px}
+
+nav a{color:white;text-decoration:none;font-size:13px}
+
+.lang button{background:transparent;color:white;border:1px solid #d5ad61;padding:8px 12px;cursor:pointer}
+
+.lang button.active{background:#d5ad61;color:#111}
+
 .hero{min-height:570px;padding:120px 9%;background:linear-gradient(90deg,#000e,#0005),url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400') center/cover}
+
 .hero h1{font-size:clamp(42px,7vw,75px);max-width:700px}
+
 .gold{color:#d5ad61}
+
 .hero p{color:#ddd;font-size:18px;line-height:1.8}
+
 .btn{display:inline-block;background:#d5ad61;color:#111;padding:16px 28px;text-decoration:none;font-weight:bold;margin-top:20px}
+
 section{padding:80px 8%;text-align:center}
+
 h2{font-size:35px}
-.about{background:#191919}
+
+.about,.contact{background:#191919}
+
 .about p{max-width:750px;margin:auto;color:#bbb;line-height:2}
+
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:22px;margin-top:40px}
+
 .card{background:#202020;border:1px solid #806b43;padding:35px 20px}
+
 .card h3{color:#d5ad61;font-size:21px}
+
 .card p{color:#bbb;line-height:1.7}
-.contact{background:#191919}
+
 .contact a{color:#d5ad61;font-size:19px}
+
 footer{text-align:center;padding:25px;color:#888;border-top:1px solid #333}
-@media(max-width:650px){header{flex-direction:column;gap:20px}nav a{margin:0 7px}.hero{padding:90px 7%}}
+
+@media(max-width:650px){
+
+header{flex-direction:column}
+
+nav{justify-content:center}
+
+.hero{padding:90px 7%}
+
+}
+
 </style>
+
 </head>
+
 <body>
+
 <header>
+
 <div class="logo">MAGNAT<span>CONSTRUCTION</span></div>
+
 <nav>
-<a href="#home">HOME</a>
-<a href="#about">ÜBER UNS</a>
-<a href="#services">LEISTUNGEN</a>
-<a href="#contact">KONTAKT</a>
+
+<a href="#home" data-de="HOME" data-en="HOME">HOME</a>
+
+<a href="#about" data-de="ÜBER UNS" data-en="ABOUT US">ÜBER UNS</a>
+
+<a href="#services" data-de="LEISTUNGEN" data-en="SERVICES">LEISTUNGEN</a>
+
+<a href="#contact" data-de="KONTAKT" data-en="CONTACT">KONTAKT</a>
+
+<div class="lang">
+
+<button id="de" class="active" onclick="setLang('de')">DE</button>
+
+<button id="en" onclick="setLang('en')">EN</button>
+
+</div>
+
 </nav>
+
 </header>
 
 <div class="hero" id="home">
-<p class="gold">QUALITÄT · VERTRAUEN · PRÄZISION</p>
+
+<p class="gold" data-de="QUALITÄT · VERTRAUEN · PRÄZISION" data-en="QUALITY · TRUST · PRECISION">QUALITÄT · VERTRAUEN · PRÄZISION</p>
+
 <h1>BUILDING <span class="gold">EXCELLENCE.</span></h1>
-<p>Ihr Partner für Naturstein, Fliesen, Import & Export sowie professionelle Montage.</p>
-<a class="btn" href="#contact">KONTAKT AUFNEHMEN</a>
+
+<p data-de="Ihr Partner für Naturstein, Fliesen, Import & Export sowie professionelle Montage."
+
+data-en="Your partner for natural stone, tiles, import & export and professional installation.">
+
+Ihr Partner für Naturstein, Fliesen, Import & Export sowie professionelle Montage.
+
+</p>
+
+<a class="btn" href="#contact" data-de="KONTAKT AUFNEHMEN" data-en="GET IN TOUCH">KONTAKT AUFNEHMEN</a>
+
 </div>
 
 <section class="about" id="about">
-<h2 class="gold">ÜBER UNS</h2>
-<p>MAGNAT CONSTRUCTION steht für Qualität, Zuverlässigkeit und professionelle Dienstleistungen. Unser Fokus liegt auf Naturstein und Fliesen, internationalem Import und Export sowie fachgerechter Montage und Verlegung.</p>
+
+<h2 class="gold" data-de="ÜBER UNS" data-en="ABOUT US">ÜBER UNS</h2>
+
+<p data-de="MAGNAT CONSTRUCTION steht für Qualität, Zuverlässigkeit und professionelle Dienstleistungen. Unser Fokus liegt auf Naturstein und Fliesen, internationalem Import und Export sowie fachgerechter Montage und Verlegung."
+
+data-en="MAGNAT CONSTRUCTION stands for quality, reliability and professional services. Our focus is on natural stone and tiles, international import and export, as well as expert installation and fitting.">
+
+MAGNAT CONSTRUCTION steht für Qualität, Zuverlässigkeit und professionelle Dienstleistungen. Unser Fokus liegt auf Naturstein und Fliesen, internationalem Import und Export sowie fachgerechter Montage und Verlegung.
+
+</p>
+
 </section>
 
 <section id="services">
-<h2 class="gold">UNSERE LEISTUNGEN</h2>
+
+<h2 class="gold" data-de="UNSERE LEISTUNGEN" data-en="OUR SERVICES">UNSERE LEISTUNGEN</h2>
+
 <div class="cards">
-<div class="card"><h3>Naturstein</h3><p>Hochwertige Natursteinprodukte und individuelle Lösungen.</p></div>
-<div class="card"><h3>Fliesen</h3><p>Auswahl und Handel hochwertiger Fliesen.</p></div>
-<div class="card"><h3>Import & Export</h3><p>Internationaler Handel mit Naturstein und Fliesen.</p></div>
-<div class="card"><h3>Montage & Verlegung</h3><p>Professionelle Montage und fachgerechte Verlegung.</p></div>
+
+<div class="card">
+
+<h3 data-de="Naturstein" data-en="Natural Stone">Naturstein</h3>
+
+<p data-de="Hochwertige Natursteinprodukte und individuelle Lösungen."
+
+data-en="High-quality natural stone products and customized solutions.">
+
+Hochwertige Natursteinprodukte und individuelle Lösungen.
+
+</p>
+
 </div>
+
+<div class="card">
+
+<h3 data-de="Fliesen" data-en="Tiles">Fliesen</h3>
+
+<p data-de="Auswahl und Handel hochwertiger Fliesen."
+
+data-en="Selection and trade of high-quality tiles.">
+
+Auswahl und Handel hochwertiger Fliesen.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Import & Export</h3>
+
+<p data-de="Internationaler Handel mit Naturstein und Fliesen."
+
+data-en="International trade in natural stone and tiles.">
+
+Internationaler Handel mit Naturstein und Fliesen.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3 data-de="Montage & Verlegung" data-en="Installation & Fitting">Montage & Verlegung</h3>
+
+<p data-de="Professionelle Montage und fachgerechte Verlegung."
+
+data-en="Professional installation and expert fitting.">
+
+Professionelle Montage und fachgerechte Verlegung.
+
+</p>
+
+</div>
+
+</div>
+
 </section>
 
 <section class="contact" id="contact">
-<h2 class="gold">KONTAKT</h2>
-<p>Wir freuen uns auf Ihre Anfrage!</p>
+
+<h2 class="gold" data-de="KONTAKT" data-en="CONTACT">KONTAKT</h2>
+
+<p data-de="Wir freuen uns auf Ihre Anfrage!"
+
+data-en="We look forward to hearing from you!">
+
+Wir freuen uns auf Ihre Anfrage!
+
+</p>
+
 <p><a href="mailto:magnatconstructionn@gmail.com">magnatconstructionn@gmail.com</a></p>
-<a class="btn" href="mailto:magnatconstructionn@gmail.com">E-MAIL SENDEN</a>
+
+<a class="btn" href="mailto:magnatconstructionn@gmail.com"
+
+data-de="E-MAIL SENDEN" data-en="SEND EMAIL">E-MAIL SENDEN</a>
+
 </section>
 
-<footer>©️ 2026 MAGNAT CONSTRUCTION. Alle Rechte vorbehalten.</footer>
+<footer>© 2026 MAGNAT CONSTRUCTION. All rights reserved.</footer>
+
+<script>
+
+function setLang(lang){
+
+document.documentElement.lang=lang;
+
+document.querySelectorAll('[data-'+lang+']').forEach(el=>{
+
+el.textContent=el.getAttribute('data-'+lang);
+
+});
+
+document.getElementById('de').classList.toggle('active',lang==='de');
+
+document.getElementById('en').classList.toggle('active',lang==='en');
+
+}
+
+</script>
+
 </body>
+
 </html>
