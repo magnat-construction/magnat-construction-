@@ -14,59 +14,171 @@
 
 *{box-sizing:border-box}
 
+html{scroll-behavior:smooth}
+
 body{margin:0;background:#111;color:white;font-family:Arial,sans-serif}
 
-header{padding:25px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #b99755;flex-wrap:wrap;gap:15px}
+header{
+
+padding:25px 7%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+border-bottom:1px solid #b99755;
+
+flex-wrap:wrap;
+
+gap:15px;
+
+}
 
 .logo{color:#d5ad61;font-size:25px;font-weight:bold;letter-spacing:4px}
 
 .logo span{display:block;color:white;font-size:11px;letter-spacing:6px;text-align:center;margin-top:5px}
 
-nav{display:flex;align-items:center;flex-wrap:wrap;gap:16px}
+nav{display:flex;align-items:center;flex-wrap:wrap;gap:15px}
 
 nav a{color:white;text-decoration:none;font-size:13px}
 
-.lang button{background:transparent;color:white;border:1px solid #d5ad61;padding:8px 12px;cursor:pointer}
+nav a:hover{color:#d5ad61}
+
+.lang button{
+
+background:transparent;
+
+color:white;
+
+border:1px solid #d5ad61;
+
+padding:8px 12px;
+
+cursor:pointer
+
+}
 
 .lang button.active{background:#d5ad61;color:#111}
 
-.hero{min-height:570px;padding:120px 9%;background:linear-gradient(90deg,#000e,#0005),url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400') center/cover}
+.gold{color:#d5ad61}
+
+.hero{
+
+min-height:570px;
+
+padding:120px 9%;
+
+background:linear-gradient(90deg,#000e,#0005),
+
+url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400') center/cover;
+
+}
 
 .hero h1{font-size:clamp(42px,7vw,75px);max-width:700px}
 
-.gold{color:#d5ad61}
-
 .hero p{color:#ddd;font-size:18px;line-height:1.8}
 
-.btn{display:inline-block;background:#d5ad61;color:#111;padding:16px 28px;text-decoration:none;font-weight:bold;margin-top:20px}
+.btn{
+
+display:inline-block;
+
+background:#d5ad61;
+
+color:#111;
+
+padding:16px 28px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+margin-top:20px
+
+}
 
 section{padding:80px 8%;text-align:center}
 
 h2{font-size:35px}
 
-.about,.contact{background:#191919}
+.about,.contact,.gallery{background:#191919}
 
 .about p{max-width:750px;margin:auto;color:#bbb;line-height:2}
 
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:22px;margin-top:40px}
+.cards{
 
-.card{background:#202020;border:1px solid #806b43;padding:35px 20px}
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+
+gap:22px;
+
+margin-top:40px
+
+}
+
+.card{
+
+background:#202020;
+
+border:1px solid #806b43;
+
+padding:25px 20px
+
+}
 
 .card h3{color:#d5ad61;font-size:21px}
 
 .card p{color:#bbb;line-height:1.7}
 
+.gallery-card{padding:12px;overflow:hidden}
+
+.gallery-card img{
+
+width:100%;
+
+height:240px;
+
+object-fit:cover;
+
+display:block;
+
+transition:transform .4s
+
+}
+
+.gallery-card:hover img{transform:scale(1.04)}
+
+.gallery-card h3{margin:20px 0 10px}
+
 .contact a{color:#d5ad61;font-size:19px}
 
-footer{text-align:center;padding:25px;color:#888;border-top:1px solid #333}
+footer{
+
+text-align:center;
+
+padding:25px;
+
+color:#888;
+
+border-top:1px solid #333
+
+}
 
 @media(max-width:650px){
 
 header{flex-direction:column}
 
-nav{justify-content:center}
+nav{justify-content:center;gap:12px}
+
+nav a{font-size:12px}
 
 .hero{padding:90px 7%}
+
+section{padding:65px 6%}
+
+.gallery-card img{height:210px}
 
 }
 
@@ -88,6 +200,8 @@ nav{justify-content:center}
 
 <a href="#services" data-de="LEISTUNGEN" data-en="SERVICES">LEISTUNGEN</a>
 
+<a href="#gallery" data-de="GALERIE" data-en="GALLERY">GALERIE</a>
+
 <a href="#contact" data-de="KONTAKT" data-en="CONTACT">KONTAKT</a>
 
 <div class="lang">
@@ -101,6 +215,8 @@ nav{justify-content:center}
 </nav>
 
 </header>
+
+<!-- HOME -->
 
 <div class="hero" id="home">
 
@@ -120,6 +236,8 @@ Ihr Partner für Naturstein, Fliesen, Import & Export sowie professionelle Monta
 
 </div>
 
+<!-- ABOUT -->
+
 <section class="about" id="about">
 
 <h2 class="gold" data-de="ÜBER UNS" data-en="ABOUT US">ÜBER UNS</h2>
@@ -133,6 +251,8 @@ MAGNAT CONSTRUCTION steht für Qualität, Zuverlässigkeit und professionelle Di
 </p>
 
 </section>
+
+<!-- SERVICES -->
 
 <section id="services">
 
@@ -200,6 +320,62 @@ Professionelle Montage und fachgerechte Verlegung.
 
 </section>
 
+<!-- GALLERY -->
+
+<section class="gallery" id="gallery">
+
+<h2 class="gold" data-de="UNSERE PROJEKTE" data-en="OUR PROJECTS">UNSERE PROJEKTE</h2>
+
+<p style="color:#bbb"
+
+data-de="Qualität, Materialien und Inspiration."
+
+data-en="Quality, materials and inspiration.">
+
+Qualität, Materialien und Inspiration.
+
+</p>
+
+<div class="cards">
+
+<div class="card gallery-card">
+
+<img src="magnat-bathroom.png" alt="Luxury marble bathroom">
+
+<h3 data-de="Luxusbäder" data-en="Luxury Bathrooms">Luxusbäder</h3>
+
+</div>
+
+<div class="card gallery-card">
+
+<img src="magnat-stone-slabs.png" alt="Natural stone and marble">
+
+<h3 data-de="Naturstein & Marmor" data-en="Natural Stone & Marble">Naturstein & Marmor</h3>
+
+</div>
+
+<div class="card gallery-card">
+
+<img src="magnat-staircase.png" alt="Stone staircase">
+
+<h3 data-de="Treppen" data-en="Staircases">Treppen</h3>
+
+</div>
+
+<div class="card gallery-card">
+
+<img src="magnat-terrace.png" alt="Luxury outdoor terrace">
+
+<h3 data-de="Terrassen" data-en="Terraces">Terrassen</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
 <section class="contact" id="contact">
 
 <h2 class="gold" data-de="KONTAKT" data-en="CONTACT">KONTAKT</h2>
@@ -212,15 +388,31 @@ Wir freuen uns auf Ihre Anfrage!
 
 </p>
 
-<p><a href="mailto:magnatconstructionn@gmail.com">magnatconstructionn@gmail.com</a></p>
+<p>
+
+<a href="mailto:magnatconstructionn@gmail.com">
+
+magnatconstructionn@gmail.com
+
+</a>
+
+</p>
 
 <a class="btn" href="mailto:magnatconstructionn@gmail.com"
 
-data-de="E-MAIL SENDEN" data-en="SEND EMAIL">E-MAIL SENDEN</a>
+data-de="E-MAIL SENDEN" data-en="SEND EMAIL">
+
+E-MAIL SENDEN
+
+</a>
 
 </section>
 
-<footer>© 2026 MAGNAT CONSTRUCTION. All rights reserved.</footer>
+<footer>
+
+© 2026 MAGNAT CONSTRUCTION. All rights reserved.
+
+</footer>
 
 <script>
 
@@ -228,7 +420,7 @@ function setLang(lang){
 
 document.documentElement.lang=lang;
 
-document.querySelectorAll('[data-'+lang+']').forEach(el=>{
+document.querySelectorAll('[data-de][data-en]').forEach(el=>{
 
 el.textContent=el.getAttribute('data-'+lang);
 
